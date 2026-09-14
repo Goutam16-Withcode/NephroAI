@@ -599,7 +599,10 @@ with st.sidebar:
     <div style="text-align: center; padding: 0.8rem 0;">
         <span style="font-size: 2.8rem;">🩺</span>
         <h2 style="margin: 0.4rem 0 0 0; color: #ffffff;">NephroAI</h2>
-        <p style="color: #93c5fd; font-size: 0.82rem; margin: 0;">Clinical Intelligence Platform</p>
+        <p style="color: #93c5fd; font-size: 0.82rem; margin: 0 0 0.6rem 0;">Clinical Intelligence Platform</p>
+        <a href="https://goutam16-withcode-nephroai-app-tcvbsm.streamlit.app/" target="_blank" style="display: inline-block; background: #0284c7; color: #ffffff; text-decoration: none; padding: 0.35rem 0.85rem; border-radius: 9999px; font-size: 0.78rem; font-weight: 600; box-shadow: 0 2px 8px rgba(2,132,199,0.4);">
+            🌐 Live Cloud Instance ↗
+        </a>
     </div>
     """, unsafe_allow_html=True)
     
@@ -671,8 +674,8 @@ else:
 st.markdown("""
 <div class="status-ribbon">
     <div><span class="pulse-dot"></span>NEPHROAI ENGINE: ONLINE</div>
-    <div>ACCURACY: 98.8% | AUC-ROC: 0.96</div>
-    <div>MODEL: RANDOM FOREST ENSEMBLE</div>
+    <div><a href="https://goutam16-withcode-nephroai-app-tcvbsm.streamlit.app/" target="_blank" style="color: #38bdf8; text-decoration: none; font-weight: 600;">🌐 LIVE CLOUD APP ↗</a></div>
+    <div>MODEL: RANDOM FOREST (98.8% ACC)</div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -1220,6 +1223,13 @@ with tab_about:
     - **Document Engine**: ReportLab PDF Clinical Generator
     - **Data Pipeline**: Pandas & NumPy with clinical imputation and categorical encodings
 
+    #### 🔗 Deployment & Source Links
+    st.markdown("""
+    - 🌐 **Live Cloud Application**: [https://goutam16-withcode-nephroai-app-tcvbsm.streamlit.app/](https://goutam16-withcode-nephroai-app-tcvbsm.streamlit.app/)
+    - 💻 **GitHub Repository**: [https://github.com/Goutam16-Withcode/Kidney-Diesease-Prediction](https://github.com/Goutam16-Withcode/Kidney-Diesease-Prediction)
+    """)
+
+    st.markdown("""
     #### 🔒 Medical Safety Disclaimer
     This application is intended strictly for educational, research, and assistive screening purposes. It should **never** replace clinical judgment, diagnostic imaging, biopsy, or laboratory serum electrolyte tests performed by licensed nephrologists.
     """)

@@ -1,26 +1,32 @@
 # 🩺 NephroAI — Real-Time Chronic Kidney Disease (CKD) Clinical Intelligence Platform
 
-[![NephroAI](https://img.shields.io/badge/Platform-NephroAI%20v3.2-0284c7.svg?style=for-the-badge&logo=mediamarkt&logoColor=white)]()
+[![Live Demo](https://img.shields.io/badge/Streamlit%20Cloud-Live%20Demo-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://goutam16-withcode-nephroai-app-tcvbsm.streamlit.app/)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Goutam16-Withcode/Kidney-Diesease-Prediction)
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
-[![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B.svg?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io)
 [![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Machine%20Learning-F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org)
 [![Accuracy](https://img.shields.io/badge/Model%20Accuracy-98.8%25-brightgreen.svg?style=for-the-badge)]()
 [![AUC-ROC](https://img.shields.io/badge/AUC--ROC-0.96-success.svg?style=for-the-badge)]()
 [![License](https://img.shields.io/badge/License-MIT-purple.svg?style=for-the-badge)]()
 
-**NephroAI** is an advanced, machine learning-powered clinical decision support system designed for early screening, risk stratification, and diagnostic intelligence in Chronic Kidney Disease (CKD). Featuring a hospital-grade Streamlit web interface with real-time risk gauges, CKD-EPI eGFR staging, what-if scenario simulations, batch CSV scoring, benchmark analytics, and automated PDF medical report generation.
+---
+
+> ### 🌐 **Live Cloud Application**
+> **Launch NephroAI in your browser with zero installation:**  
+> 🔗 **[https://goutam16-withcode-nephroai-app-tcvbsm.streamlit.app/](https://goutam16-withcode-nephroai-app-tcvbsm.streamlit.app/)**  
+> *Fully interactive: 1-click clinical presets, CKD-EPI staging, real-time Plotly gauges, What-If simulator, and PDF clinical report downloads.*
 
 ---
 
 ## 📌 Table of Contents
 - [Executive Overview](#-executive-overview)
+- [Live Cloud Application](#-live-cloud-application)
 - [Key Features of NephroAI](#-key-features-of-nephroai)
 - [Model Evaluation & Benchmarks](#-model-evaluation--benchmarks)
 - [ROC Curve Analysis](#-roc-curve-analysis)
-- [System Architecture](#-system-architecture)
 - [Clinical Biomarkers & Features](#-clinical-biomarkers--features)
+- [System Architecture](#-system-architecture)
 - [Installation & Quick Start](#-installation--quick-start)
-- [Running NephroAI](#-running-nephroai)
+- [Programmatic API Usage](#-programmatic-api-usage)
 - [Clinical PDF Report Export](#-clinical-pdf-report-export)
 - [Medical Safety Disclaimer](#-medical-safety-disclaimer)
 
@@ -28,33 +34,50 @@
 
 ## 🔬 Executive Overview
 
-Chronic Kidney Disease (CKD) impacts over 850 million people worldwide. Because kidney damage often progresses asymptomatically during its initial stages, early screening and clinical triage are vital to prevent progression to End-Stage Renal Disease (ESRD).
+Chronic Kidney Disease (CKD) affects over 850 million individuals worldwide. Because nephron destruction occurs asymptomatically in early phases, proactive screening and clinical triage are vital to prevent progression to End-Stage Renal Disease (ESRD) and dialysis.
 
-**NephroAI** addresses this challenge by combining:
-1. **Multi-Algorithm Clinical Benchmarking**: Empirical evaluation across 7 supervised models (Random Forest, XGBoost, GBDT, Decision Tree, Logistic Regression, SVM, KNN).
-2. **High-Accuracy Production Engine**: Deploying a **Random Forest Classifier** with **98.8% Accuracy** and **0.96 AUC-ROC** score.
-3. **Diagnostic Intelligence Suite**: Integrating real-time eGFR (CKD-EPI) calculations, KDIGO stage mapping (G1 to G5), dynamic Plotly biomarker gauges, vital fingerprint radar charts, and explainable feature contributions.
-4. **Hospital Workflow Integration**: Session triage registry, one-click patient presets, batch CSV screening, and downloadable formatted PDF clinical reports.
+**NephroAI** delivers:
+1. **Multi-Model Empirical Benchmarking**: Rigorous evaluation across 7 supervised algorithms (Random Forest, XGBoost, GBDT, Decision Tree, Logistic Regression, SVM, KNN).
+2. **State-of-the-Art Production Engine**: Deploys a **Random Forest Classifier** achieving **98.8% Accuracy** and **0.96 AUC-ROC** score.
+3. **Diagnostic Intelligence Suite**: Real-time **CKD-EPI (2021) eGFR** computation, **KDIGO staging (G1 to G5)**, interactive Plotly vital gauges, radar vital fingerprinting, and explainable feature risk attribution.
+4. **Clinical Workflow Tools**: 1-click clinical presets, what-if scenario simulator, cohort batch screening, session triage registry, and automated PDF medical summaries.
+
+---
+
+## 🌐 Live Cloud Application
+
+The platform is deployed live on Streamlit Community Cloud:
+
+👉 **[Launch NephroAI Live Web App](https://goutam16-withcode-nephroai-app-tcvbsm.streamlit.app/)**
+
+### Highlights on the Cloud Instance:
+- **Instant Testing**: Use the sidebar presets (**🟢 Healthy**, **🟡 Borderline**, **🔴 Severe CKD**) to test realistic clinical cases with 1 click.
+- **Interactive Gauges**: Real-time radial meters for Blood Pressure, Serum Creatinine, and Hemoglobin.
+- **What-If Simulation**: Adjust therapeutic sliders (e.g. lowering Blood Pressure or Creatinine) to observe projected eGFR recovery.
+- **Instant PDF Export**: Generate and download an official diagnostic clinical report in seconds.
 
 ---
 
 ## 🌟 Key Features of NephroAI
 
-- **⚡ 1-Click Patient Presets**: Instantly pre-populate typical profiles: *Healthy Adult*, *Borderline/At-Risk*, or *Severe CKD*.
-- **🎯 Real-Time ML Risk Stratification**: Immediate diagnosis (*Low Risk / Negative* vs. *High Risk / Positive for CKD*) with prediction confidence percentage.
-- **🧮 CKD-EPI eGFR & KDIGO Staging**: Automated calculation of Estimated Glomerular Filtration Rate and official 5-stage KDIGO classification.
-- **📊 Interactive Vital Gauges & Radar**: Plotly visual gauges for Serum Creatinine, Blood Pressure, and Hemoglobin, plus a multi-axial vital radar fingerprint.
-- **🚨 Automated Clinical Flags**: Triage warnings for Stage 1/2 Hypertension, Hyperglycemia, Azotemia, Anemia, and Proteinuria.
-- **🔮 Interactive What-If Simulator**: Experiment with adjusting vitals (e.g. lowering Blood Pressure or Creatinine) to see simulated risk trajectory in real time.
-- **📂 Batch CSV Screening**: Upload a roster of patients or generate synthetic cohorts for automated multi-patient risk screening and CSV export.
-- **📈 Native Model Performance Auditing**: Direct in-app display of benchmark charts (`PE_kidney.jpeg` and `roc_kidney.jpeg`).
-- **📄 Downloadable Clinical PDF Reports**: Generate official diagnostic summaries for patient records with clinical observations and doctor sign-off fields.
+| Feature | Description |
+| :--- | :--- |
+| **⚡ 1-Click Patient Presets** | Pre-populate realistic profiles: *Healthy Adult*, *Borderline/At-Risk*, or *Severe CKD*. |
+| **🎯 Real-Time ML Stratification** | Immediate classification into *Low Risk (Negative)* or *High Risk (Positive for CKD)* with confidence probability. |
+| **🧮 CKD-EPI eGFR & KDIGO Staging** | Computes estimated Glomerular Filtration Rate and categorizes into official stages (G1 to G5). |
+| **📊 Interactive Vital Gauges & Radar** | Plotly visual meters for Serum Creatinine, BP, and Hemoglobin plus multi-axial vital radar fingerprint. |
+| **🔍 Explainable AI (XAI)** | Dynamic relative diagnostic impact bar chart showing which biomarkers drove the risk score. |
+| **🚨 Automated Clinical Flags** | Triage alert cards for Stage 1/2 Hypertension, Hyperglycemia, Azotemia, Anemia, and Proteinuria. |
+| **🔮 What-If Scenario Simulator** | Test therapeutic interventions (e.g. glycemic or BP control) to project eGFR trajectory changes. |
+| **📂 Batch Cohort Screening** | 1-click synthetic patient cohort scoring with risk distribution donut chart and downloadable CSV. |
+| **🏥 Live Session Triage Registry** | Automatic logging of screened patients during the active session with CSV export. |
+| **📄 Official Clinical PDF Export** | Downloadable hospital-grade summary with biomarker panels, eGFR, KDIGO staging, and physician signature block. |
 
 ---
 
 ## 📊 Model Evaluation & Benchmarks
 
-NephroAI was developed through rigorous cross-validation across 7 machine learning architectures. **Random Forest (RF)** exhibited superior generalization with minimal false-positive rates.
+NephroAI was trained and evaluated through stratified cross-validation across 7 machine learning models. **Random Forest (RF)** delivered the strongest diagnostic sensitivity with near-zero false alarms.
 
 ![Model Performance Evaluation](PE_kidney.jpeg)
 
@@ -125,10 +148,6 @@ Kidney-Diesease-Prediction/
 
 ## 🚀 Installation & Quick Start
 
-### Prerequisites
-- Python 3.9 or higher
-- Git & virtual environment manager
-
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/Goutam16-Withcode/Kidney-Diesease-Prediction.git
@@ -151,31 +170,53 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
----
-
-## 💻 Running NephroAI
-
-Start the NephroAI application:
+### 4. Run the Streamlit Dashboard Locally
 ```bash
 streamlit run app.py
 ```
+Open **`http://localhost:8501`** in your browser.
 
-The application will start immediately at:
-🌐 **`http://localhost:8501`**
+---
 
-### Running the Analysis Notebook
-To inspect the exploratory data analysis and model training:
-```bash
-jupyter notebook code_project.ipynb
+## 💻 Programmatic API Usage
+
+You can also run inference directly in Python scripts:
+
+```python
+import pickle
+import pandas as pd
+
+# Load the production Random Forest model
+with open('kindey.pkl', 'rb') as f:
+    model = pickle.load(f)
+
+# Patient clinical parameter dictionary
+patient_sample = {
+    'age': 52, 'blood_pressure': 90, 'specific_gravity': 1.015, 'albumin': 1, 'sugar': 1,
+    'red_blood_cells': 1, 'pus_cell': 1, 'pus_cell_clumps': 0, 'bacteria': 0,
+    'blood_glucose_random': 145.0, 'blood_urea': 44.0, 'serum_creatinine': 1.4,
+    'sodium': 136.0, 'potassium': 4.5, 'haemoglobin': 12.1,
+    'packed_cell_volume': 38.0, 'white_blood_cell_count': 8900.0,
+    'red_blood_cell_count': 4.4, 'hypertension': 1,
+    'diabetes_mellitus': 0, 'coronary_artery_disease': 0,
+    'appetite': 0, 'peda_edema': 0, 'aanemia': 0
+}
+
+df = pd.DataFrame([patient_sample])
+prediction = model.predict(df)[0]
+confidence = model.predict_proba(df)[0][prediction] * 100
+
+print("Diagnosis:", "Positive for CKD (High Risk)" if prediction == 0 else "Negative (Low Risk)")
+print(f"Confidence: {confidence:.2f}%")
 ```
 
 ---
 
 ## 📄 Clinical PDF Report Export
 
-NephroAI compiles a multi-page medical PDF report for each assessed patient:
-- **Parameters**: Patient Demographics, Vitals, Renal Function Markers, eGFR and KDIGO Staging, Diagnostic Classification, Confidence %, and Risk Flags.
-- **One-Click Export**: Click **Download Official Medical Report (.PDF)** to export.
+NephroAI automatically compiles a formal medical PDF report for each assessed case using ReportLab:
+- **Includes**: Clinic Header Ribbon, Patient ID, Clinical Timestamps, Measured Biomarker Panels, CKD-EPI eGFR, KDIGO Stage, Diagnostic Classification, Confidence %, Flagged Alerts, and Physician Sign-off field.
+- **Export**: Click **Download Official Medical Report (.PDF)** to save a permanent record.
 
 ---
 

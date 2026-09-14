@@ -197,25 +197,84 @@ st.markdown("""
         box-shadow: 0 6px 20px rgba(2, 132, 199, 0.45) !important;
     }
 
-    /* Tabs Styling */
-    .stTabs [data-baseweb="tab-list"] {
-        gap: 8px;
-        background-color: #ffffff;
-        padding: 6px;
-        border-radius: 0.75rem;
-        border: 1px solid #e2e8f0;
+    /* --- BULLETPROOF UNIVERSAL HIGH-CONTRAST TAB NAVIGATION --- */
+    .stTabs [data-baseweb="tab-list"],
+    [data-testid="stTabs"] [role="tablist"],
+    [data-testid="stTabs"] > div:first-child {
+        gap: 8px !important;
+        background-color: #0f172a !important;
+        padding: 8px 12px !important;
+        border-radius: 0.85rem !important;
+        border: 2px solid #334155 !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        margin-bottom: 1.8rem !important;
     }
 
-    .stTabs [data-baseweb="tab"] {
-        border-radius: 0.5rem;
-        font-weight: 600;
-        color: #64748b;
-        padding: 10px 18px;
+    /* ALL TAB BUTTONS (Default / Unselected) */
+    .stTabs [data-baseweb="tab"],
+    [data-testid="stTabs"] button,
+    [data-testid="stTabs"] [role="tab"] {
+        background-color: #1e293b !important;
+        border: 1.5px solid #475569 !important;
+        border-radius: 0.65rem !important;
+        padding: 10px 18px !important;
+        transition: all 0.2s ease-in-out !important;
+        opacity: 1 !important;
+        visibility: visible !important;
     }
 
-    .stTabs [aria-selected="true"] {
-        background: #0284c7 !important;
+    /* TEXT INSIDE ALL TABS - CRISP PURE WHITE */
+    .stTabs [data-baseweb="tab"] p,
+    .stTabs [data-baseweb="tab"] span,
+    .stTabs [data-baseweb="tab"] div,
+    [data-testid="stTabs"] button p,
+    [data-testid="stTabs"] button span,
+    [data-testid="stTabs"] button div,
+    [data-testid="stTabs"] [role="tab"] p,
+    [data-testid="stTabs"] [role="tab"] span,
+    [data-testid="stTabs"] [role="tab"] div {
         color: #ffffff !important;
+        font-weight: 700 !important;
+        font-size: 0.96rem !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: inline-block !important;
+    }
+
+    /* HOVER STATE */
+    .stTabs [data-baseweb="tab"]:hover,
+    [data-testid="stTabs"] button:hover {
+        background-color: #334155 !important;
+        border-color: #38bdf8 !important;
+        transform: translateY(-1px) !important;
+    }
+
+    /* SELECTED ACTIVE TAB */
+    .stTabs [aria-selected="true"],
+    .stTabs [data-baseweb="tab"][aria-selected="true"],
+    [data-testid="stTabs"] button[aria-selected="true"],
+    [data-testid="stTabs"] [role="tab"][aria-selected="true"] {
+        background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+        border: 1.5px solid #38bdf8 !important;
+        box-shadow: 0 4px 14px rgba(56, 189, 248, 0.45) !important;
+    }
+
+    .stTabs [aria-selected="true"] p,
+    .stTabs [aria-selected="true"] span,
+    .stTabs [aria-selected="true"] div,
+    [data-testid="stTabs"] button[aria-selected="true"] p,
+    [data-testid="stTabs"] button[aria-selected="true"] span,
+    [data-testid="stTabs"] button[aria-selected="true"] div {
+        color: #ffffff !important;
+        font-weight: 800 !important;
+        font-size: 0.96rem !important;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    .stTabs [data-baseweb="tab-highlight"],
+    .stTabs [data-baseweb="tab-border"] {
+        display: none !important;
     }
 
     /* Badges */

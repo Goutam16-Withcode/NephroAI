@@ -1,62 +1,66 @@
-# 🏥 Chronic Kidney Disease (CKD) Prediction & Clinical Risk Intelligence
+# 🩺 NephroAI — Real-Time Chronic Kidney Disease (CKD) Clinical Intelligence Platform
 
-[![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg?logo=python&logoColor=white)](https://python.org)
-[![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B.svg?logo=streamlit&logoColor=white)](https://streamlit.io)
-[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Machine%20Learning-F7931E.svg?logo=scikit-learn&logoColor=white)](https://scikit-learn.org)
-[![Accuracy](https://img.shields.io/badge/Best%20Model%20Accuracy-98.8%25-brightgreen.svg)]()
-[![AUC-ROC](https://img.shields.io/badge/AUC--ROC-0.96-success.svg)]()
-[![License](https://img.shields.io/badge/License-MIT-purple.svg)]()
+[![NephroAI](https://img.shields.io/badge/Platform-NephroAI%20v3.2-0284c7.svg?style=for-the-badge&logo=mediamarkt&logoColor=white)]()
+[![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B.svg?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io)
+[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Machine%20Learning-F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org)
+[![Accuracy](https://img.shields.io/badge/Model%20Accuracy-98.8%25-brightgreen.svg?style=for-the-badge)]()
+[![AUC-ROC](https://img.shields.io/badge/AUC--ROC-0.96-success.svg?style=for-the-badge)]()
+[![License](https://img.shields.io/badge/License-MIT-purple.svg?style=for-the-badge)]()
 
-An advanced machine learning-powered clinical decision support system designed to screen, assess, and predict the risk of Chronic Kidney Disease (CKD). Featuring an interactive, hospital-grade Streamlit web application with real-time risk gauges, model benchmark analytics, clinical flags, and downloadable patient PDF reports.
+**NephroAI** is an advanced, machine learning-powered clinical decision support system designed for early screening, risk stratification, and diagnostic intelligence in Chronic Kidney Disease (CKD). Featuring a hospital-grade Streamlit web interface with real-time risk gauges, CKD-EPI eGFR staging, what-if scenario simulations, batch CSV scoring, benchmark analytics, and automated PDF medical report generation.
 
 ---
 
 ## 📌 Table of Contents
 - [Executive Overview](#-executive-overview)
-- [Key Features](#-key-features)
+- [Key Features of NephroAI](#-key-features-of-nephroai)
 - [Model Evaluation & Benchmarks](#-model-evaluation--benchmarks)
-- [ROC Analysis](#-roc-analysis)
+- [ROC Curve Analysis](#-roc-curve-analysis)
 - [System Architecture](#-system-architecture)
 - [Clinical Biomarkers & Features](#-clinical-biomarkers--features)
-- [Quick Start & Installation](#-quick-start--installation)
-- [Running the Application](#-running-the-application)
-- [Clinical PDF Report Generation](#-clinical-pdf-report-generation)
-- [Disclaimer](#-clinical-disclaimer)
+- [Installation & Quick Start](#-installation--quick-start)
+- [Running NephroAI](#-running-nephroai)
+- [Clinical PDF Report Export](#-clinical-pdf-report-export)
+- [Medical Safety Disclaimer](#-medical-safety-disclaimer)
 
 ---
 
 ## 🔬 Executive Overview
 
-Chronic Kidney Disease (CKD) often progresses silently without pronounced symptoms until advanced stages. Early diagnosis and intervention significantly improve patient prognosis and prevent renal failure.
+Chronic Kidney Disease (CKD) impacts over 850 million people worldwide. Because kidney damage often progresses asymptomatically during its initial stages, early screening and clinical triage are vital to prevent progression to End-Stage Renal Disease (ESRD).
 
-This project delivers:
-1. **Multi-Model Machine Learning Benchmark**: Evaluates 7 distinct algorithms (Random Forest, XGBoost, GBDT, Decision Tree, Logistic Regression, SVM, KNN) on clinical patient records.
-2. **Production Ensemble Model**: Deploys a **Random Forest Classifier** reaching **98.8% Accuracy** and **0.96 AUC-ROC** score.
-3. **Interactive Clinical UI**: Built with Streamlit, custom medical typography, dynamic interactive Plotly gauges, fast one-click patient presets, and automated clinical flag detections.
-4. **Automated Diagnostic Reporting**: Generates formatted PDF medical summaries on the fly with ReportLab.
+**NephroAI** addresses this challenge by combining:
+1. **Multi-Algorithm Clinical Benchmarking**: Empirical evaluation across 7 supervised models (Random Forest, XGBoost, GBDT, Decision Tree, Logistic Regression, SVM, KNN).
+2. **High-Accuracy Production Engine**: Deploying a **Random Forest Classifier** with **98.8% Accuracy** and **0.96 AUC-ROC** score.
+3. **Diagnostic Intelligence Suite**: Integrating real-time eGFR (CKD-EPI) calculations, KDIGO stage mapping (G1 to G5), dynamic Plotly biomarker gauges, vital fingerprint radar charts, and explainable feature contributions.
+4. **Hospital Workflow Integration**: Session triage registry, one-click patient presets, batch CSV screening, and downloadable formatted PDF clinical reports.
 
 ---
 
-## 🌟 Key Features
+## 🌟 Key Features of NephroAI
 
-- **⚡ Fast-Track Patient Presets**: Pre-populate vitals for Healthy baseline, Borderline/At-Risk, or Severe CKD cases with a single click.
-- **🎯 Real-Time Risk Stratification**: Immediate classification into *Low Risk (Negative)* or *High Risk (Positive for CKD)* along with prediction confidence probability.
-- **📊 Interactive Vital Gauges**: Plotly radial indicators for Serum Creatinine, Blood Pressure, and Hemoglobin with color-coded safety, borderline, and danger zones.
-- **🚨 Automated Clinical Flags**: Instant triage warnings for Hypertension ($\ge$ 140 mm/Hg), Hyperglycemia ($\ge$ 200 mg/dL), Elevated Creatinine (> 1.2 mg/dL), and Anemia (< 12 g/dL).
-- **📈 Embedded Model Performance Analytics**: Direct visual audit of accuracy and ROC benchmarks right inside the dashboard.
-- **📑 Downloadable PDF Clinical Summary**: Instant PDF generation detailing patient vitals, clinical risk category, and diagnostic observations.
+- **⚡ 1-Click Patient Presets**: Instantly pre-populate typical profiles: *Healthy Adult*, *Borderline/At-Risk*, or *Severe CKD*.
+- **🎯 Real-Time ML Risk Stratification**: Immediate diagnosis (*Low Risk / Negative* vs. *High Risk / Positive for CKD*) with prediction confidence percentage.
+- **🧮 CKD-EPI eGFR & KDIGO Staging**: Automated calculation of Estimated Glomerular Filtration Rate and official 5-stage KDIGO classification.
+- **📊 Interactive Vital Gauges & Radar**: Plotly visual gauges for Serum Creatinine, Blood Pressure, and Hemoglobin, plus a multi-axial vital radar fingerprint.
+- **🚨 Automated Clinical Flags**: Triage warnings for Stage 1/2 Hypertension, Hyperglycemia, Azotemia, Anemia, and Proteinuria.
+- **🔮 Interactive What-If Simulator**: Experiment with adjusting vitals (e.g. lowering Blood Pressure or Creatinine) to see simulated risk trajectory in real time.
+- **📂 Batch CSV Screening**: Upload a roster of patients or generate synthetic cohorts for automated multi-patient risk screening and CSV export.
+- **📈 Native Model Performance Auditing**: Direct in-app display of benchmark charts (`PE_kidney.jpeg` and `roc_kidney.jpeg`).
+- **📄 Downloadable Clinical PDF Reports**: Generate official diagnostic summaries for patient records with clinical observations and doctor sign-off fields.
 
 ---
 
 ## 📊 Model Evaluation & Benchmarks
 
-We evaluated 7 machine learning architectures using stratified cross-validation and standard test splits. **Random Forest (RF)** exhibited superior generalization with minimal false-positive rates.
+NephroAI was developed through rigorous cross-validation across 7 machine learning architectures. **Random Forest (RF)** exhibited superior generalization with minimal false-positive rates.
 
 ![Model Performance Evaluation](PE_kidney.jpeg)
 
 | Model | Accuracy (%) | ROC Score (%) | AUC-ROC Area | Performance Rank |
 | :--- | :---: | :---: | :---: | :---: |
-| **Random Forest (RF)** ⭐ | **98.8%** | **98.2%** | **0.96** | **#1 (Selected Model)** |
+| **Random Forest (RF)** ⭐ | **98.8%** | **98.2%** | **0.96** | **#1 (Production Engine)** |
 | **XGBoost** | 96.2% | 94.6% | 0.95 | #2 |
 | **GBDT (Gradient Boosted Trees)** | 96.2% | 94.6% | 0.95 | #3 |
 | **Decision Tree (DT)** | 93.8% | 93.3% | 0.96 | #4 |
@@ -66,7 +70,7 @@ We evaluated 7 machine learning architectures using stratified cross-validation 
 
 ---
 
-## 📈 ROC Analysis
+## 📈 ROC Curve Analysis
 
 Receiver Operating Characteristic (ROC) curves illustrate the diagnostic sensitivity (True Positive Rate) against (1 - Specificity) (False Positive Rate) across classification thresholds.
 
@@ -80,10 +84,10 @@ Receiver Operating Characteristic (ROC) curves illustrate the diagnostic sensiti
 
 ## 🧬 Clinical Biomarkers & Features
 
-The model evaluates 24 clinical parameters grouped across three diagnostic pillars:
+NephroAI evaluates 24 clinical parameters grouped across three diagnostic pillars:
 
 ### 1. Patient Demographics & Urinalysis
-- **Age**: Age in years (1 - 120)
+- **Age**: Patient age in years (1 - 120)
 - **Blood Pressure (`bp`)**: Resting blood pressure in mm/Hg
 - **Specific Gravity (`sg`)**: Urine specific gravity (1.005, 1.010, 1.015, 1.020, 1.025)
 - **Albumin (`al`)**: Proteinuria scale (0 to 5)
@@ -108,22 +112,22 @@ The model evaluates 24 clinical parameters grouped across three diagnostic pilla
 
 ```
 Kidney-Diesease-Prediction/
-├── app.py                      # Production Streamlit clinical web app
+├── app.py                      # Production NephroAI Streamlit application
 ├── kindey.pkl                  # Serialized trained Random Forest ML model
 ├── PE_kidney.jpeg              # Benchmark performance evaluation bar chart
 ├── roc_kidney.jpeg             # ROC-AUC curves comparison plot
 ├── code_project.ipynb          # End-to-end data preprocessing, EDA & ML training
 ├── requirements.txt            # Python package dependencies
-└── README.md                   # Comprehensive project documentation
+└── README.md                   # NephroAI platform documentation
 ```
 
 ---
 
-## 🚀 Quick Start & Installation
+## 🚀 Installation & Quick Start
 
 ### Prerequisites
-- Python 3.9+ installed
-- Recommended: A virtual environment (`venv` or `conda`)
+- Python 3.9 or higher
+- Git & virtual environment manager
 
 ### 1. Clone the Repository
 ```bash
@@ -149,9 +153,9 @@ pip install -r requirements.txt
 
 ---
 
-## 💻 Running the Application
+## 💻 Running NephroAI
 
-Launch the Streamlit web dashboard:
+Start the NephroAI application:
 ```bash
 streamlit run app.py
 ```
@@ -159,22 +163,22 @@ streamlit run app.py
 The application will start immediately at:
 🌐 **`http://localhost:8501`**
 
-### Exploring the Jupyter Notebook
-To inspect the exploratory data analysis, data imputation, and model training:
+### Running the Analysis Notebook
+To inspect the exploratory data analysis and model training:
 ```bash
 jupyter notebook code_project.ipynb
 ```
 
 ---
 
-## 📄 Clinical PDF Report Generation
+## 📄 Clinical PDF Report Export
 
-The application automatically compiles an official PDF report for each assessed case using ReportLab.
-- **Includes**: Clinical timestamps, Patient Demographics, Vitals, Renal Function Markers, Diagnostic Classification, Confidence %, and Risk Flags.
-- **One-Click Export**: Click **Download Clinical Report (.PDF)** after running an assessment to save a local record.
+NephroAI compiles a multi-page medical PDF report for each assessed patient:
+- **Parameters**: Patient Demographics, Vitals, Renal Function Markers, eGFR and KDIGO Staging, Diagnostic Classification, Confidence %, and Risk Flags.
+- **One-Click Export**: Click **Download Official Medical Report (.PDF)** to export.
 
 ---
 
-## ⚠️ Clinical Disclaimer
+## ⚠️ Medical Safety Disclaimer
 
-> **IMPORTANT**: This application is a machine learning research prototype designed to assist healthcare professionals in screening and triage. It is **not a substitute for definitive medical diagnosis, laboratory biopsy, or professional nephrology consultation**. Always verify predictions with clinical laboratory tests.
+> **IMPORTANT**: NephroAI is an auxiliary clinical decision support and research system designed to assist qualified healthcare professionals. It **does not replace professional medical diagnosis, laboratory biopsy, or specialist nephrology consultation**. Always verify predictions with clinical laboratory tests.

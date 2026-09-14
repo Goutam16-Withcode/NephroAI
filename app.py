@@ -1224,12 +1224,9 @@ with tab_about:
     - **Data Pipeline**: Pandas & NumPy with clinical imputation and categorical encodings
 
     #### 🔗 Deployment & Source Links
-    st.markdown("""
     - 🌐 **Live Cloud Application**: [https://goutam16-withcode-nephroai-app-tcvbsm.streamlit.app/](https://goutam16-withcode-nephroai-app-tcvbsm.streamlit.app/)
     - 💻 **GitHub Repository**: [https://github.com/Goutam16-Withcode/Kidney-Diesease-Prediction](https://github.com/Goutam16-Withcode/Kidney-Diesease-Prediction)
-    """)
 
-    st.markdown("""
     #### 🔒 Medical Safety Disclaimer
     This application is intended strictly for educational, research, and assistive screening purposes. It should **never** replace clinical judgment, diagnostic imaging, biopsy, or laboratory serum electrolyte tests performed by licensed nephrologists.
     """)
